@@ -6,49 +6,31 @@
   <div class="card-body">
     <dl class="mb-1">
       <dt>Integer column</dt>
-      <!-- Display integer_column start -->
       <dd><%= thing.integer_column %></dd>
-      <!-- Display integer_column end -->
 
       <dt>String column</dt>
-      <!-- Display string_column start -->
       <dd><%= thing.string_column %></dd>
-      <!-- Display string_column end -->
 
       <dt>Decimal column</dt>
-      <!-- Display decimal_column start -->
       <dd><%= thing.decimal_column %></dd>
-      <!-- Display decimal_column end -->
 
       <dt>Datetime column</dt>
-      <!-- Display datetime_column start -->
       <dd><%= thing.datetime_column %></dd>
-      <!-- Display datetime_column end -->
 
       <dt>Time column</dt>
-      <!-- Display time_column start -->
       <dd><%= thing.time_column %></dd>
-      <!-- Display time_column end -->
 
       <dt>Date column</dt>
-      <!-- Display date_column start -->
       <dd><%= thing.date_column %></dd>
-      <!-- Display date_column end -->
 
       <dt>Text column</dt>
-      <!-- Display text_column start -->
       <dd><%= thing.text_column %></dd>
-      <!-- Display text_column end -->
 
       <dt>Boolean column</dt>
-      <!-- Display boolean_column start -->
       <dd><%= thing.boolean_column %></dd>
-      <!-- Display boolean_column end -->
 
       <dt>Enum column</dt>
-      <!-- Display enum_column start -->
       <dd><%= thing.enum_column %></dd>
-      <!-- Display enum_column end -->
 
     </dl>
 
@@ -57,21 +39,17 @@
         <%= link_to_show_or_back thing, '<i class="fas fa-search-plus"></i>'.html_safe, '<i class="fas fa-chevron-left"></i>'.html_safe, class: "btn btn-block btn-outline-secondary" %>
       </div>
 
-      <!-- Edit link thing start -->
       <div class="col">
         <%= link_to edit_thing_url(thing), class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-edit"></i>
         <% end %>
       </div>
-      <!-- Edit link thing end -->
 
-      <!-- Delete link thing start -->
       <div class="col">
         <%= link_to thing, method: :delete, data: { confirm: "Do you really want to delete this thing?" }, class: "btn btn-block btn-outline-secondary" do %>
           <i class="fas fa-trash-alt"></i>
         <% end %>
       </div>
-      <!-- Delete link thing end -->
     </div>
   </div>
 

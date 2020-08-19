@@ -1,5 +1,7 @@
 ActiveAdmin.register Thing do
 
+ permit_params :integer_column, :string_column, :decimal_column, :datetime_column, :time_column, :date_column, :text_column, :boolean_column, :enum_column
+
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #

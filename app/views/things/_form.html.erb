@@ -1,0 +1,238 @@
+<% was_validated = thing.errors.any? %>
+
+<%= form_with(model: thing, local: true, novalidate: true, class: "mb-3") do |f| %>
+  <!-- Label and input for integer_column start -->
+  <div class="form-group">
+    <% integer_column_class = "form-control" %>
+    <% integer_column_was_invalid = thing.errors.include?(:integer_column) %>
+
+    <% if was_validated %>
+      <% if integer_column_was_invalid %>
+        <% integer_column_class << " is-invalid" %>
+      <% else %>
+        <% integer_column_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :integer_column %>
+    <!-- Input for integer_column start -->
+    <%= f.number_field :integer_column, class: integer_column_class, placeholder: "Enter integer column" %>
+    <!-- Input for integer_column end -->
+    <% if integer_column_was_invalid %>
+      <% thing.errors.full_messages_for(:integer_column).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for integer_column end -->
+  <!-- Label and input for string_column start -->
+  <div class="form-group">
+    <% string_column_class = "form-control" %>
+    <% string_column_was_invalid = thing.errors.include?(:string_column) %>
+
+    <% if was_validated %>
+      <% if string_column_was_invalid %>
+        <% string_column_class << " is-invalid" %>
+      <% else %>
+        <% string_column_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :string_column %>
+    <!-- Input for string_column start -->
+    <%= f.text_field :string_column, class: string_column_class, placeholder: "Enter string column" %>
+    <!-- Input for string_column end -->
+    <% if string_column_was_invalid %>
+      <% thing.errors.full_messages_for(:string_column).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for string_column end -->
+  <!-- Label and input for decimal_column start -->
+  <div class="form-group">
+    <% decimal_column_class = "form-control" %>
+    <% decimal_column_was_invalid = thing.errors.include?(:decimal_column) %>
+
+    <% if was_validated %>
+      <% if decimal_column_was_invalid %>
+        <% decimal_column_class << " is-invalid" %>
+      <% else %>
+        <% decimal_column_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :decimal_column %>
+    <!-- Input for decimal_column start -->
+    <%= f.text_field :decimal_column, class: decimal_column_class, placeholder: "Enter decimal column" %>
+    <!-- Input for decimal_column end -->
+    <% if decimal_column_was_invalid %>
+      <% thing.errors.full_messages_for(:decimal_column).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for decimal_column end -->
+  <!-- Label and input for datetime_column start -->
+  <div class="form-group">
+    <% datetime_column_class = "form-control" %>
+    <% datetime_column_was_invalid = thing.errors.include?(:datetime_column) %>
+
+    <% if was_validated %>
+      <% if datetime_column_was_invalid %>
+        <% datetime_column_class << " is-invalid" %>
+      <% else %>
+        <% datetime_column_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :datetime_column %>
+    <!-- Input for datetime_column start -->
+    <%= f.datetime_select :datetime_column, class: datetime_column_class, placeholder: "Enter datetime column" %>
+    <!-- Input for datetime_column end -->
+    <% if datetime_column_was_invalid %>
+      <% thing.errors.full_messages_for(:datetime_column).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for datetime_column end -->
+  <!-- Label and input for time_column start -->
+  <div class="form-group">
+    <% time_column_class = "form-control" %>
+    <% time_column_was_invalid = thing.errors.include?(:time_column) %>
+
+    <% if was_validated %>
+      <% if time_column_was_invalid %>
+        <% time_column_class << " is-invalid" %>
+      <% else %>
+        <% time_column_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :time_column %>
+    <!-- Input for time_column start -->
+    <%= f.time_select :time_column, class: time_column_class, placeholder: "Enter time column" %>
+    <!-- Input for time_column end -->
+    <% if time_column_was_invalid %>
+      <% thing.errors.full_messages_for(:time_column).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for time_column end -->
+  <!-- Label and input for date_column start -->
+  <div class="form-group">
+    <% date_column_class = "form-control" %>
+    <% date_column_was_invalid = thing.errors.include?(:date_column) %>
+
+    <% if was_validated %>
+      <% if date_column_was_invalid %>
+        <% date_column_class << " is-invalid" %>
+      <% else %>
+        <% date_column_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :date_column %>
+    <!-- Input for date_column start -->
+    <%= f.date_select :date_column, class: date_column_class, placeholder: "Enter date column" %>
+    <!-- Input for date_column end -->
+    <% if date_column_was_invalid %>
+      <% thing.errors.full_messages_for(:date_column).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for date_column end -->
+  <!-- Label and input for text_column start -->
+  <div class="form-group">
+    <% text_column_class = "form-control" %>
+    <% text_column_was_invalid = thing.errors.include?(:text_column) %>
+
+    <% if was_validated %>
+      <% if text_column_was_invalid %>
+        <% text_column_class << " is-invalid" %>
+      <% else %>
+        <% text_column_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :text_column %>
+    <!-- Input for text_column start -->
+    <%= f.text_area :text_column, class: text_column_class, placeholder: "Enter text column" %>
+    <!-- Input for text_column end -->
+    <% if text_column_was_invalid %>
+      <% thing.errors.full_messages_for(:text_column).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for text_column end -->
+  <!-- Label and input for boolean_column start -->
+  <div class="form-check">
+    <% boolean_column_class = "form-check-input" %>
+    <% boolean_column_was_invalid = thing.errors.include?(:boolean_column) %>
+
+    <% if was_validated %>
+      <% if boolean_column_was_invalid %>
+        <% boolean_column_class << " is-invalid" %>
+      <% else %>
+        <% boolean_column_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :boolean_column, class: "form-check-label" do %>
+      <%= f.check_box :boolean_column, class: boolean_column_class %> Boolean column
+    <% end %>
+    <% if boolean_column_was_invalid %>
+      <% thing.errors.full_messages_for(:boolean_column).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for boolean_column end -->
+  <!-- Label and input for enum_column start -->
+  <div class="form-group">
+    <% enum_column_class = "form-control" %>
+    <% enum_column_was_invalid = thing.errors.include?(:enum_column) %>
+
+    <% if was_validated %>
+      <% if enum_column_was_invalid %>
+        <% enum_column_class << " is-invalid" %>
+      <% else %>
+        <% enum_column_class << " is-valid" %>
+      <% end %>
+    <% end %>
+
+    <%= f.label :enum_column %>
+    <!-- Input for enum_column start -->
+    <%= f.number_field :enum_column, class: enum_column_class, placeholder: "Enter enum column" %>
+    <!-- Input for enum_column end -->
+    <% if enum_column_was_invalid %>
+      <% thing.errors.full_messages_for(:enum_column).each do |message| %>
+        <div class="invalid-feedback d-flex">
+          <%= message %>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  <!-- Label and input for enum_column end -->
+  <%= f.button class: "btn btn-outline-secondary btn-block" %>
+<% end %>

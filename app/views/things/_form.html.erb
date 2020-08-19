@@ -223,7 +223,7 @@
 
     <%= f.label :enum_column %>
     <!-- Input for enum_column start -->
-    <%= f.number_field :enum_column, class: enum_column_class, placeholder: "Enter enum column" %>
+    <%= f.select :enum_column, options_for_select(Thing.enum_columns.keys), {}, class: "form-control" %>
     <!-- Input for enum_column end -->
     <% if enum_column_was_invalid %>
       <% thing.errors.full_messages_for(:enum_column).each do |message| %>
